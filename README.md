@@ -39,3 +39,8 @@ Database:
 Why This Project?
 
 This project has been chosen because it provides an opportunity to work on a real-world problem, enhancing the dining experience while helping restaurants operate more efficiently. It combines full-stack development skills and allows exploration of modern technologies like React and MongoDB.
+
+
+Build command : npm install
+Start command : node server.js
+Render link : https://s85-modern-restaurant-application.onrender.com/ping
