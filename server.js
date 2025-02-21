@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 // Connect to MongoDB
 connectDB();
 
-// Home Route with Database Status
+// Home-Route with Database Status
 app.get('/', (req, res) => {
   res.send('Welcome to the Restaurant App!');
 });
