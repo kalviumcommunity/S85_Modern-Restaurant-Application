@@ -1,5 +1,5 @@
 import express from 'express';
-import { User } from '../model/user.js'; // Import the User model
+import { User } from '../model/user.js'; 
 
 const router = express.Router();
 
@@ -11,9 +11,9 @@ router.post('/users', async (req, res) => {
     const newUser = new User(req.body);
 
     await newUser.save();
-    res.status(201).json({ message: 'User created', user: newUser });
+    res.status(201).json({ message: 'User created',newUser });
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(400).json({error:error.message });
   }
 });
 
