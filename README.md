@@ -46,3 +46,5 @@ Build command : npm install
 Start command : node server.js
 
 Render link : https://s85-modern-restaurant-application.onrender.com/ping
+
+cloudflare link: https://modernrestaurantapplication.pages.dev/
