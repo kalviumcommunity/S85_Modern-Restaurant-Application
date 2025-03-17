@@ -1,16 +1,19 @@
 import "./App.css";
+import MenuItem from "./components/MenuItem";
 
 const App = () => {
+  const sampleMenuItem = {
+    name: "Spicy Paneer Pizza",
+    price: 12.99,
+    description: "A delicious spicy paneer pizza with fresh toppings and extra cheese.",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-dUdkyqtoNcatcBg6ighRZsdQnqsAREwtFw&s",
+  };
+
   return (
-    <div className="container">
-      <div className="card">
-        <h1 className="title">A Modern Restaurant Application</h1>
-        <p className="description">
-          <strong>DineEase</strong> is a comprehensive restaurant application aimed at streamlining the dining experience for both customers and restaurant owners.
-          The application will allow customers to browse menus, place orders, reserve tables, and make payments online. 
-          For restaurant owners, it provides tools to manage menus, orders, reservations, and customer feedback efficiently. 
-          The goal is to create a user-friendly platform that enhances convenience and operational efficiency.
-        </p>
+    <div className="container">    
+      <div className="menu-section">
+        <h2 className="section-title">Featured Dish</h2>
+        <MenuItem {...sampleMenuItem} />
       </div>
     </div>
   );
