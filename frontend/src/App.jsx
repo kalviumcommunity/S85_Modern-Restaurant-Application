@@ -1,20 +1,40 @@
+import { useEffect, useState } from "react";
 import "./App.css";
-import MenuItem from "./components/MenuItem";
 
 const App = () => {
-  const sampleMenuItem = {
-    name: "Spicy Paneer Pizza",
-    price: 12.99,
-    description: "A delicious spicy paneer pizza with fresh toppings and extra cheese.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-dUdkyqtoNcatcBg6ighRZsdQnqsAREwtFw&s",
-  };
+  const [reservations, setReservations] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:4000/api/users")  // Ensure this endpoint is correct
+      .then((res) => res.json())
+      .then((data) => setReservations(data))
+      .catch((error) => console.error("Error fetching reservations:", error));
+  }, []);
 
   return (
-    <div className="container">    
-      <div className="menu-section">
-        <h2 className="section-title">Featured Dish</h2>
-        <MenuItem {...sampleMenuItem} />
-      </div>
+    <div className="container">
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Date</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {reservations.map((reservation) => (
+            <tr key={reservation._id}>
+              <td>{reservation.firstname} {reservation.lastName}</td>
+              <td>{reservation.email}</td>
+              <td>{reservation.phone}</td>
+              <td>{reservation.date}</td>
+              <td>{reservation.time}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
