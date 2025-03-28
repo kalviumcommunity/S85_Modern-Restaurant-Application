@@ -1,21 +1,23 @@
-import "./App.css";
-import MenuItem from "./components/MenuItem";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Info from "./Info";
+import Form from "./Form"; // Import Form component
 
 const App = () => {
-  const sampleMenuItem = {
-    name: "Spicy Paneer Pizza",
-    price: 12.99,
-    description: "A delicious spicy paneer pizza with fresh toppings and extra cheese.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-dUdkyqtoNcatcBg6ighRZsdQnqsAREwtFw&s",
-  };
-
   return (
-    <div className="container">    
-      <div className="menu-section">
-        <h2 className="section-title">Featured Dish</h2>
-        <MenuItem {...sampleMenuItem} />
-      </div>
-    </div>
+    <Router>
+      <nav>
+        <Link to="/">Home</Link> | 
+        <Link to="/info">Reservations</Link> | 
+        <Link to="/form">Submit Details</Link> {/* Add link to Form */}
+      </nav>
+      
+      <Routes>
+        <Route path="/" element={<h1>Welcome to Our Website</h1>} />
+        <Route path="/info" element={<Info />} />
+        <Route path="/form" element={<Form />} /> {/* Set route for Form */}
+      </Routes>
+    </Router>
   );
 };
 
