@@ -1,89 +1,37 @@
-/* Global Styles */
+/* Keep Navigation Fixed at the Top */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #18fced;
+}
+
+/* Adjust body to prevent content from overlapping the navbar */
 body {
   margin: 0;
-  padding: 0;
+  padding-top: 60px; /* Give space for the fixed navbar */
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #2b48cc, #aec1e3);
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* Main Container */
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px; /* Space between sections */
-  width: 90%;
-  max-width: 1200px;
-  padding: 20px;
-}
-
-/* Information Card */
-
-
-/* Featured Menu Section */
-.menu-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
-  min-width: 300px;
-  max-width: 400px;
-}
-
-/* Menu Heading */
-.menu-heading {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-
-/* Menu Item */
-.menu-item {
-  padding: 15px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
-  text-align: center;
-  margin-top: 15px;
-  width: 100%;
-}
-
-/* Image Fix */
-.menu-image {
-  width: 100%;
-  max-width: 250px;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-/* Menu Text */
-.menu-title {
-  font-size: 18px;
-  font-weight: bold;
-  color: #ffffff;
-}
-
-.menu-description {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
-  margin-top: 5px;
-}
-
-.menu-price {
-  font-size: 16px;
-  font-weight: bold;
-  color: #00ff99;
-  margin-top: 8px;
+  align-items: flex-start; /* Align content to the top */
+  min-height: 100vh;
+  overflow-x: hidden;
 }
