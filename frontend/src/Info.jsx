@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
+
 const Info = () => {
   const [reservations, setReservations] = useState([]);
   const [editingUser, setEditingUser] = useState(null);
