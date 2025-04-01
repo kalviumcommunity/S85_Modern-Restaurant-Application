@@ -12,15 +12,32 @@ const Form = () => {
         date: "",
     });
 
+    const [loading, setLoading] = useState(false); // Loading state for better UX
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true); // Show loading state
+
         try {
+            // Fetch all users to check if email already exists
+            const { data: users } = await axios.get("http://localhost:4000/api/users");
+            const userExists = users.some(user => user.email === formData.email);
+
+            if (userExists) {
+                alert("User already exists");
+                setLoading(false);
+                return;
+            }
+
+            // Proceed with form submission if user does not exist
             const response = await axios.post("http://localhost:4000/api/users", formData);
             alert(response.data.message);
+
+            // Clear form fields
             setFormData({
                 firstname: "",
                 lastName: "",
@@ -28,9 +45,11 @@ const Form = () => {
                 phone: "",
                 time: "",
                 date: "",
-            }); // Clear form after successful submission
+            });
         } catch (error) {
-            alert("Error submitting form");
+            alert(error.response?.data?.message || "Error submitting form");
+        } finally {
+            setLoading(false); // Reset loading state
         }
     };
 

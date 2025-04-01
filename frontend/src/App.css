@@ -7,16 +7,20 @@ nav {
   background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
   padding: 15px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end; 
   gap: 20px;
   z-index: 1000; /* Ensure it stays on top */
+  padding-right: 50px; /* Ensure it stays on top */
 }
+
 
 nav a {
   color: white;
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
+  font-weight: bold;
+  padding: 0px 15px; 
 }
 
 nav a:hover {
@@ -34,4 +38,22 @@ body {
   align-items: flex-start; /* Align content to the top */
   min-height: 100vh;
   overflow-x: hidden;
+}
+button {
+  margin-right: 10px; /* Adds space between Edit and Delete buttons */
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.edit-btn {
+  background-color: #28a745; /* Green color for Edit */
+  color: white;
+}
+
+.delete-btn {
+  background-color: #dc3545; /* Red color for Delete */
+  color: white;
 }
