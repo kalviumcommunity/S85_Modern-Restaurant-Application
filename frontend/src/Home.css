@@ -1,0 +1,44 @@
+  .logout-container {
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+  }
+  
+  .logout-button {
+    padding: 0.6rem 1.3rem;
+    background: linear-gradient(45deg, #111, #444);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  
+  .logout-button:hover {
+    background: linear-gradient(45deg, #000, #666);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
