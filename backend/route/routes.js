@@ -36,7 +36,7 @@ router.post('/login', [
 
   try {
     const user = await User.findOne({ email: emailNormalized });
-    console.log("User Found:", user);  // Log user data for debugging
+   // Log user data for debugging
 
     if (!user) {
       return res.status(401).json({ message: 'Invalid email or password' });

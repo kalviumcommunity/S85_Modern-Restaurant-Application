@@ -10,7 +10,7 @@ const Form = () => {
     phone: "",
     time: "",
     date: "",
-    password: "", // Add password field
+    password: "", 
   });
 
   const [loading, setLoading] = useState(false);
