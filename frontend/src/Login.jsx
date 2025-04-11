@@ -26,8 +26,7 @@ const Login = () => {
 
       if (response.ok) {
         localStorage.setItem("firstname", data.user.firstname);
-
-        navigate('/'); 
+        navigate('/');
       } else {
         setError(data.message || 'Login failed');
       }
@@ -35,6 +34,10 @@ const Login = () => {
       console.error("Login Error:", err);
       setError('Server error');
     }
+  };
+
+  const handleSignupRedirect = () => {
+    navigate('/form');
   };
 
   return (
@@ -61,6 +64,16 @@ const Login = () => {
         />
         <button type="submit">Login</button>
       </form>
+
+      <p style={{ marginTop: '10px', color:"black"}}>
+        Don’t have an account?{' '}
+        <span
+          style={{ color: '#2563eb', cursor: 'pointer', textDecoration: 'underline' }}
+          onClick={handleSignupRedirect}
+        >
+          Sign up
+        </span>
+      </p>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import connectDB from './database/db.js';
 import router from './route/routes.js';
 import cors from "cors";
 import { errorMiddleware } from './error/error.js';
+import foodRoutes from "./route/foodRoutes.js";
 dotenv.config({ path: './config/.env' });
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -22,7 +23,7 @@ app.get('/', (req, res) => {
 });
 app.use(errorMiddleware)
 app.use('/api', router);
-
+app.use('/api/foods', foodRoutes);
 app.listen(PORT, () => {
   console.log(` Server running on port http://localhost:${PORT}`);
 });
