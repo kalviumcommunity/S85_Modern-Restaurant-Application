@@ -53,9 +53,10 @@
 }
 
 .logout-container {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
+  position: fixed; /* makes it stick to the viewport */
+  top: 60px;
+  right: 20px;
+  z-index: 1000; 
 }
 
 .logout-button {
