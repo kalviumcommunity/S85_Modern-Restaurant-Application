@@ -33,10 +33,11 @@ const Members = () => {
           onChange={(e) => setSelectedUser(e.target.value)}
           style={{ padding: "10px", fontSize: "16px" }}
         >
-          <option value="" disabled>-- Select a User --</option>
+          <option value="">-- Select a User --</option>
           {users.map((user) => (
-            <option key={user.id} value={user.id}>  {/* Assuming `id` is the correct field */}
-              {user.firstname}
+
+            <option key={user._id} value={user._id}>
+              {user.firstname} 
             </option>
           ))}
         </select>
@@ -47,7 +48,7 @@ const Members = () => {
         )}
         {foods.map((food) => (
           <div
-            key={food.id}  
+            key={food._id}
             style={{
               border: "1px solid #ccc",
               borderRadius: "5px",

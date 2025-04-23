@@ -5,7 +5,7 @@ import "./Form.css";
 const Form = () => {
   const [formData, setFormData] = useState({
     firstname: "",
-    lastName: "", // ✅ camelCase to match backend
+    lastName: "",
     email: "",
     phone: "",
     time: "",
@@ -39,7 +39,7 @@ const Form = () => {
       // Reset form
       setFormData({
         firstname: "",
-        lastName: "", // ✅ again here
+        lastName: "",
         email: "",
         phone: "",
         time: "",
@@ -47,14 +47,8 @@ const Form = () => {
         password: "",
       });
     } catch (error) {
-      console.log("❌ Backend error:", error.response?.data);
-      if (error.response?.data?.errors) {
-        alert("Validation error: " + error.response.data.errors[0].msg);
-      } else {
-        alert(error.response?.data?.error || "Something went wrong");
-      }
-    }
-     finally {
+      alert(error.response?.data?.message || "Error submitting form");
+    } finally {
       setLoading(false);
     }
   };
@@ -74,7 +68,7 @@ const Form = () => {
         />
         <input
           type="text"
-          name="lastName" // ✅ camelCase here
+          name="lastName"
           placeholder="Last Name"
           value={formData.lastName}
           onChange={handleChange}

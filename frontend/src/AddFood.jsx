@@ -1,4 +1,3 @@
-// AddFood.jsx
 import { useState, useEffect } from "react";
 import axios from "axios";
 import './AddFood.css';
@@ -55,7 +54,7 @@ const AddFood = () => {
           required
         />
         <textarea
-          style={{resize:"none"}}
+        style={{resize:"none"}}
           placeholder="Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
@@ -73,8 +72,8 @@ const AddFood = () => {
         >
           <option value="">Select User</option>
           {users.map((user) => (
-            <option key={user.id} value={user.id}>  {/* Use user.id here */}
-              {user.firstname} {user.lastName}
+            <option key={user._id} value={user._id}>
+              {user.firstname} {user.lastname}
             </option>
           ))}
         </select>
