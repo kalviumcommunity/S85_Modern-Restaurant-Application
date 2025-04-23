@@ -10,7 +10,6 @@ import { errorMiddleware } from './error/error.js';
 dotenv.config({ path: './config/.env' });
 const app = express();
 const PORT = process.env.PORT || 5000;
-
 // Middleware
 app.use(express.json()); // Parse JSON data
 app.use(express.urlencoded({ extended: true })); 
